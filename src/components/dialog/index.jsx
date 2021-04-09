@@ -47,15 +47,10 @@ const Dialog = ({ isModalOpen, closeModal, selectedKey, handleEditAction }) => {
     form
       .validateFields()
       .then((values) => {
-        //  //form.resetFields();
-        // onCreate(values);
         handleEditAction(newData);
-        // debugger;
       })
       .catch((info) => {
         console.log('Validate Failed:', info);
-        // debugger;
-        //  setSelectedFuel('Toyota Prius (A-41082)');
         handleEditAction(false);
       });
     const newData = {
@@ -67,14 +62,12 @@ const Dialog = ({ isModalOpen, closeModal, selectedKey, handleEditAction }) => {
       fuel: selectedFuel,
       cost: 'Active',
     };
-    //form.validateFields();
 
     setSelectedVehicle('Toyota Prius (A-41082)');
     setSelectedDate(moment('01/01/2015', dateFormat));
     setOdometer(null);
     setVolume(null);
     setSelectedFuel('Toyota Prius (A-41082)');
-    // handleEditAction(newData);
   };
 
   const handleCancel = () => closeModal();
